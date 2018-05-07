@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="">
+	<head>
+		<title>Welcome to Tree</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--Navigation Bar-->
+		<nav>
+			<div class="nav navigation-bar">
+				<div id="nav-home">
+					<ul>
+						<li>
+							<a href="#">Tree</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav-right">
+					<ul>
+						<li>
+							<a href="#">Login</a>
+						</li>
+						<li>
+							<a href="#">Register</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li>
+							<a href="#">Feedback</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--End Navigation Bar-->
+
+		<div class="container">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h5>Sign In</h5>
+					<form class="" method="post" action="#">
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Sign In</button>
+						</div>
+						<div id="xtra-space"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- **************************CODE HERE************************** -->
+
+		<!-- jQuery - required for Bootstrap's JavaScript plugins) -->
+		<footer>
+			<p id="footer-author">Copyright © 2018 Tree. All rights reserved.</p>
+		</footer>
+		<script src="dist/js/jquery.js"></script>
+		<!-- All Bootstrap plug-ins file -->
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- Basic AngularJS -->
+		<script src="dist/js/angular.min.js"></script>
+	</body>
+ </html>
