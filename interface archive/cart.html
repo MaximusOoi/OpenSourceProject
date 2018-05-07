@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="">
+	<head>
+		<title>Shopping Cart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--Navigation Bar-->
+		<nav>
+			<div class="nav navigation-bar">
+				<div id="nav-home">
+					<ul>
+						<li>
+							<a href="#">Tree</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav-right">
+					<ul>
+						<li>
+							<a href="#">My Profile</a>
+						</li>
+						<li>
+							<a href="#">Shop</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li>
+							<a href="#">Feedback</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--End Navigation Bar-->
+
+		<!-- **************************CODE HERE************************** -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Shopping Cart</h1>
+					<div id="payMtd">
+						<form method="post" action="#">
+							<p>Payment Currency:</p>
+							<select>
+								<option value="AUD (A$)">Australian Dollar (A$)</option>
+								<option value="USD (US$)">US Dollar (US$)</option>
+								<option value="MYR (RM)">Malaysian Ringgit (RM)</option>
+								<option value="SKW (A$)">South Korean Won (KRW)</option>
+								<option value="SGD (A$)">Singapore Dollar (S$)</option>
+							</select>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 ">
+					<div class="table-responsive">
+						<table class="cart-table table table-striped tabled-hover">
+							<tbody>
+								<tr class="title">
+									<th class="item">Product</th>
+									<th class="qty">Qty</th>
+									<th class="amt">Amount</th>
+									<th class="gst">Tax</th>
+									<th class="tot">Total (incl.)</th>
+								</tr>
+								<tr class="cart-product-selected">
+									<td class="item">
+										<div class="img">
+											<span>
+												<img src="#"/>
+											</span>
+										</div>
+										<p>
+											<a href="#">Product Name</a>
+										</p>
+									</td>
+									<td class="qty">
+										<span>
+											Example: 1
+										</span>
+									</td>
+									<td class="amt">
+										<span class="price">
+											Example: A$ 100
+										</span>
+									</td>
+									<td class="gst">
+										<span class="price">
+											Example: 6%
+										</span>
+									</td>
+									<td class="tot">
+										<span>
+											Example: A$106
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="cart-total-qty-count">
+						<span id="cart-pay-total">
+							Example: A$
+							<b>
+								106
+							</b>
+						</span>
+					</div>
+					<div id="cart-pay-button">
+						<button class="btn">
+							Continue Shopping
+						</button>
+						<button class="btn">
+							Pay Now
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- **************************CODE HERE************************** -->
+
+		<!-- jQuery - required for Bootstrap's JavaScript plugins) -->
+		<footer>
+			<p id="footer-author">Copyright © 2018 Tree. All rights reserved.</p>
+		</footer>
+		<script src="dist/js/jquery.js"></script>
+		<!-- All Bootstrap plug-ins file -->
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- Basic AngularJS -->
+		<script src="dist/js/angular.min.js"></script>
+	</body>
+ </html>
