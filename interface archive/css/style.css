@@ -57,7 +57,7 @@ body, html{
 
 #nav-right{
 	text-align: right;
-	padding-left: 47%;
+	padding-left: 40%;
 }
 
 #nav-home{
@@ -68,6 +68,7 @@ body, html{
 footer{
     /*structure*/
     padding-top: 150px;
+	margin-top: 100px;
 
     /*graphic*/
     background-color: rgb(232,232,232);
@@ -192,5 +193,27 @@ span.input-group-addon i {
 	text-align: center;
 }
 /*Index End*/
+
+/*Cart Start*/
+#payMtd{
+	float: right;
+}
+
+.cart-table{
+	border: solid 1px black;
+}
+
+#cart-pay-button, #cart-pay-total{
+	text-align: center;
+}
+
+/*Cart End*/
+
+
+
+
+
+
+
 
 
