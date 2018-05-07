@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myTree">
+	<head>
+		<title>Welcome to Tree</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!--Navigation Bar-->
+		<nav>
+			<div class="nav navigation-bar">
+				<div id="nav-home">
+					<ul>
+						<li>
+							<a href="#">Tree</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav-right">
+					<ul>
+						<li>
+							<a href="#">Login</a>
+						</li>
+						<li>
+							<a href="#">Register</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li>
+							<a href="#">Feedback</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--End Navigation Bar-->
+
+		<div class="container" data-ng-controller="myCtrl">
+			<div class="row main">
+				<div class="main-login main-center">
+				<h5>Register to start using Tree</h5>
+					<form method="post" action="#" name="myForm" data-ng-submit="submit()" novalidate="novalidate">
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name" data-ng-model="uName" data-ng-required="true" data-ng-pattern="/^[a-zA-Z\s]*$/"/>
+									<span class="text-danger" data-ng-show="myForm.uName.$dirty && myForm.uName.$error.required"><br/>The Firstname is required</span>
+									<span class="text-danger" data-ng-show="myForm.uName.$dirty && myForm.uName.$error.pattern"><br/>The Firstname is invalid</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" data-ng-model="uEmail" data-ng-required="true"/>
+									<span class="text-danger" data-ng-show="myForm.uEmail.$dirty && myForm.uEmail.$error.required"><br/>The Email is required</span>
+									<span class="text-danger" data-ng-show="myForm.uEmail.$dirty && myForm.uEmail.$error.email"><br/>Invalid Email</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username" data-ng-model="userName" data-ng-required="true" data-ng-minlength="3"/>
+									<span class="text-danger" data-ng-show="myForm.userName.$dirty && myForm.userName.$error.required"><br/>The Username is required</span>
+									<span class="text-danger" data-ng-show="myForm.userName.$dirty && myForm.userName.$error.minlength"><br/>The Username is too short!</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" data-ng-model="uPassword" data-ng-required="true" data-ng-minlength="8" data-ng-pattern="/^(?=.{8,})(?=.*[a-zA-Z])(?=.*[a-zA-Z])(?=.*[@#$%^&+=*]).*$/"/>
+									<span class="text-danger" data-ng-show="myForm.uPassword.$dirty && myForm.uPassword.$error.required"><br/>The Password is required</span>
+									<span class="text-danger" data-ng-show="myForm.uPassword.$dirty && myForm.uPassword.$error.minlength"><br/>The Password is too short!</span>
+									<span class="text-danger" data-ng-show="myForm.uPassword.$dirty && myForm.uPassword.$error.pattern"><br/>At least one special character ($, %, ^, &amp;, *), an UPPERCASE, and an lowercase</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group has-feedback" data-ng-class="{'has-error':(myForm.cPassword.$invalid && cPassword != uPassword) && myForm.cPassword.$dirty, 'has-success':myForm.cPassword.$valid && cPassword == uPassword}">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" data-ng-model="cPassword" data-ng-required="true" data-ng-compare="uPassword"//>
+									<span class="text-danger" data-ng-show="myForm.cPassword.$dirty && myForm.cPassword.$error.required"><br/>The Comformation Password is required</span>
+									<span class="text-danger" data-ng-if="uPassword != cPassword"><br/>The Password does not match!</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- **************************CODE HERE************************** -->
+
+		<!-- jQuery - required for Bootstrap's JavaScript plugins) -->
+		<footer>
+			<p id="footer-author">Copyright © 2018 Tree. All rights reserved.</p>
+		</footer>
+		<script src="dist/js/jquery.js"></script>
+		<!-- All Bootstrap plug-ins file -->
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- Basic AngularJS -->
+		<script src="dist/js/angular.min.js"></script>
+		<script src="dist/js/appregistration2.js"></script>
+	</body>
+ </html>
